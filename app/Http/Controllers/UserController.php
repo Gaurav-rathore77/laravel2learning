@@ -17,4 +17,12 @@ class UserController extends Controller
         // Pass it to the view
         return view('api', compact('posts'));
     }
+
+public function loga()
+{
+    $res = Http::get('https://randomuser.me/api/');
+    $pakad = $res->json();
+    return view('tech', compact('pakad'));
+}
+
 }

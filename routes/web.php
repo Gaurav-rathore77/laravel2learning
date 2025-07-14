@@ -27,8 +27,13 @@ Route::post('/photos', [PhotoController::class, 'store'])->name('photos.store');
 Route::get('/photos', [PhotoController::class, 'index'])->name('photos.index');
 Route::get('/user', [PracticeController::class, 'user'])->name('auth.form');
 Route::get('/api', [UserController::class, 'fetch'])->name('api');
+Route::get('/tech', [UserController::class, 'loga'])->name('tech');
+        
 
 
 
+Route::get('/dashboard', function () {
+    return "✅ Welcome to Dashboard!";
+})->middleware('check.status');
 // Handle form submission
 Route::post('/user', [PracticeController::class, 'validationUser'])->name('auth.user');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
+    
 
 
     public function create()
@@ -19,6 +20,7 @@ class PhotoController extends Controller
             'title' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+    
 
         // Store image
         $path = $request->file('image')->store('images', 'public');
